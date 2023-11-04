@@ -5,6 +5,8 @@ import Home from "./screens/Home/Home";
 import Footer from "./components/Footer/footer";
 import Login from "./components/Login/login";
 import Signup from "./components/Signup/signup";
+import Form from "./components/Form";
+import UserProfile from "./components/UserProfile";
 const App = () => (
   <>
     <Navbar />
@@ -12,6 +14,8 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/form" element={<Form />} />
+      <Route path="/userprofile" element={<UserProfile />} />
       {/* <Route path="/register" element={<Register />} /> */}
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
