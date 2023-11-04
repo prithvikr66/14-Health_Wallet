@@ -14,10 +14,12 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/form" element={<Form />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/form" element={<Form />} />
-      <Route path="/userprofile" element={<UserProfile />} />
+      <Route path="/userprofile" element={<UserProfile/>} />
       <Route path="/fileupload" element={<FileUpload />} />
+
       {/* <Route path="/register" element={<Register />} /> */}
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
