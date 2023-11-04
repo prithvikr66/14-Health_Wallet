@@ -42,10 +42,10 @@ let key=scryptSync(password,"SALT",24);
 let iv=Buffer.alloc(16,0)
 
 // encrypt("./public/tesseract.png","enc.enc",algorithm,key,iv);
-decrypt("enc.enc","./public/tesseract.png",algorithm,key,iv);
+// decrypt("enc.enc","./public/tesseract.png",algorithm,key,iv);
 
 
 app.listen(3000,()=>{
-    console.log("Server running on port 3000")
+    console.log("Server running on port 3000");
 })
 
