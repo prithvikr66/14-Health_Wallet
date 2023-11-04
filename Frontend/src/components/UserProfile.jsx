@@ -2,6 +2,7 @@ import React from "react";
 import profileimg from "../assets/1.jpg"; // Replace with the actual path to your profile image
 import "../App.css";
 import Medicine from "./Medicine";
+import Doctor from "./Doctor";
 
 const UserProfile = () => {
   return (
@@ -46,6 +47,7 @@ const UserProfile = () => {
         </div>
         <Medicine />
       </div>
+      <Doctor />
     </div>
   );
 };
