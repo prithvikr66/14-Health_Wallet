@@ -2,8 +2,6 @@ import {React,useEffect,useState} from "react";
 import profileimg from "../assets/1.jpg"; // Replace with the actual path to your profile image
 import "../App.css";
 import Medicine from "./Medicine";
-import { ethers } from "ethers";
-import { abi } from "../../../Contracts/abi";
 
 const UserProfile = () => {
   const [name,setName]=useState("")
@@ -68,6 +66,7 @@ const UserProfile = () => {
         </div>
         <Medicine />
       </div>
+      <Doctor />
     </div>
   );
 };

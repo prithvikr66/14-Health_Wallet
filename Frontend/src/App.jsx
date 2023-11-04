@@ -7,15 +7,19 @@ import Login from "./components/Login/login";
 import Signup from "./components/Signup/signup";
 import Form from "./components/Form";
 import UserProfile from "./components/UserProfile";
+import FileUpload from "./components/FileUpload";
 const App = () => (
   <>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/form" element={<Form />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/form" element={<Form />} />
-      <Route path="/userprofile" element={<UserProfile />} />
+      <Route path="/userprofile" element={<UserProfile/>} />
+      <Route path="/fileupload" element={<FileUpload />} />
+
       {/* <Route path="/register" element={<Register />} /> */}
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
