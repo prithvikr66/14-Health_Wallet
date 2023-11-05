@@ -11,6 +11,7 @@ import FileUpload from "./components/FileUpload";
 import AppLayout from "./screens/Applayout/applayout";
 import { AuthProvider } from "./hooks/AuthContext";
 import Landing from "./screens/Landing/landing";
+import Map from "./components/Map";
 const App = () => (
   <AuthProvider>
     <Router>
@@ -19,13 +20,16 @@ const App = () => (
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/form" element={<Form />} />
+         
           <Route path="/signup" element={<Signup />} />
+
           {/* <Route path="/register" element={<Register />} /> */}
           {/* <Route path="*" element={<NotFound />} /> */}
         </Route>
-          <Route path="/userprofile" element={<UserProfile />} />
-          <Route path="/fileupload" element={<FileUpload />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="/fileupload" element={<FileUpload />} />
         <Route>
           <Route path="/landing" element={<Landing />} />
         </Route>

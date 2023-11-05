@@ -21,6 +21,12 @@ function Navbar() {
               <Link to="/userprofile" className="text-white hover:underline">
                 UserProfile
               </Link>
+              <Link to="/fileupload" className="text-white hover:underline">
+                FileUpload
+              </Link>
+              <Link to="/map" className="text-white hover:underline">
+                Emergency
+              </Link>
                 <button className="text-white hover:underline" onClick={handleLogout}>Logout</button>
             </>
           ) : (
