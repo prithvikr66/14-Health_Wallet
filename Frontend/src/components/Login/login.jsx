@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/AuthContext"; 
 // import GoogleIcon from "../../assets/icons/google.png";
 
 const Login = () => {
+  const { state, dispatch } = useAuth();
+
+  const handleLogin = () => {
+    // Perform login logic
+    dispatch({ type: "LOGIN" });
+  };
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full md:w-[30rem] h-[29rem] md:h-[30rem]">
@@ -54,6 +61,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
+            onClick={handleLogin}
             className="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition duration-300"
           >
             Login

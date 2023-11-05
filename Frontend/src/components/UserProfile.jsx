@@ -1,29 +1,36 @@
-import {React,useEffect,useState} from "react";
+import { React, useEffect, useState } from "react";
 import profileimg from "../assets/1.jpg"; // Replace with the actual path to your profile image
 import "../App.css";
+import graphimg from "../assets/3.jpg"; // Replace with the actual path to your profile image
 import Medicine from "./Medicine";
-
+import { ethers } from "ethers";
+import Doctor from "./Doctor";
+import { abi } from "../../../Contracts/abi";
 const UserProfile = () => {
-  const [name,setName]=useState("")
-  const [weight,setWeight]=useState()
-  const [age,setAge]=useState()
-  const [diagnosis,setDiagnosis]=useState()
-  const contractAddress="0x5f29a5cca6abd9a141f3e2d84d85b90dde968b8e";
-  const provider=new ethers.providers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/_OWeidX2GJ2DOiiilZP21aymdg3XyPgq");
+  const [name, setName] = useState("");
+  const [weight, setWeight] = useState();
+  const [age, setAge] = useState();
+  const [diagnosis, setDiagnosis] = useState();
+  const contractAddress = "0x5f29a5cca6abd9a141f3e2d84d85b90dde968b8e";
+  const provider = new ethers.providers.JsonRpcProvider(
+    "https://eth-sepolia.g.alchemy.com/v2/_OWeidX2GJ2DOiiilZP21aymdg3XyPgq"
+  );
 
-  useEffect(()=>{
-    const getHealthDetails=async()=>{
-      const contractInstance=new ethers.Contract(contractAddress,abi,provider);    
-      const response=await contractInstance.getPatientRecord(0);
-      setName(response[0])
+  useEffect(() => {
+    const getHealthDetails = async () => {
+      const contractInstance = new ethers.Contract(
+        contractAddress,
+        abi,
+        provider
+      );
+      const response = await contractInstance.getPatientRecord(0);
+      setName(response[0]);
       // setAge(response[1])
-      setDiagnosis(response[2])
-  }
-  getHealthDetails();
-    
+      setDiagnosis(response[2]);
+    };
+    getHealthDetails();
+  }, []);
 
-  },[])
-  
   return (
     <div className="text-black min-h-screen p-8 w-full">
       <div className="flex items-center mb-6 content">
@@ -59,14 +66,17 @@ const UserProfile = () => {
             >
               Diseases
             </label>
-            <p className="text-lg font-medium text-black">
-              {diagnosis}
-            </p>
+            <p className="text-lg font-medium text-black">{diagnosis}</p>
           </div>
         </div>
         <Medicine />
       </div>
       <Doctor />
+      <img
+        src={graphimg}
+        alt="Profile Image"
+        className="w-full align items-center rounded-full mr-8 mt-6 p-9"
+      />
     </div>
   );
 };

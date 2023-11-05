@@ -61,6 +61,7 @@ router.post("/login", async (req, res, next) => {
         .json({
           message: "Successfully Authenticated",
           user: userWithoutPassword,
+          status: 1,
         });
     });
   })(req, res, next);
@@ -84,6 +85,7 @@ router.get("/logout", function (req, res) {
       res.clearCookie("connect.sid"); // Clear the session cookie
       res.status(200).json({
         message: "Logged out successfully",
+        status : 0,
       });
     });
   });
