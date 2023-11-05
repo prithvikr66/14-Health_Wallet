@@ -1,5 +1,5 @@
 import React from "react";
-import Mapimg from "../assets/4.jpg";
+import Mapimg from "../assets/4.avif";
 
 const Map = () => {
   const containerStyle = {
